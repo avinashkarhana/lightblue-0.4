@@ -17,8 +17,8 @@ jobs:
         run: pip3 install wheel
 
       - name: Build wheels
-        run: python3 setup.py bdist_wheel --universal
+        run: python3 setup.py bdist_wheel --universal --dist-dir=wheels
 
       - uses: actions/upload-artifact@v2
         with:
-          path: ./*.whl
+          path: ./wheels/*.whl
