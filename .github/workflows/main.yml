@@ -21,4 +21,5 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
+          name: asset-for-down
           path: ./wheels/*.whl
