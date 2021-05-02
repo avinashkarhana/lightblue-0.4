@@ -12,6 +12,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Installing wheel
+        run: pip3 install wheel
 
       - name: Build wheels
         run: python3 setup.py bdist_wheel --universal --dist-dir=wheelhouse/
