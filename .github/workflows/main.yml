@@ -22,6 +22,10 @@ jobs:
       - name: Installing lightBlue
         run: |
           cd src/mac/LightAquaBlue
+          mkdir Versions
+          cd Versions
+          mkdir Current
+          cd ..
           xcodebuild install -arch '$(NATIVE_ARCH_ACTUAL)' -target LightAquaBlue -configuration Release DSTROOT=/ INSTALL_PATH=/Library/Frameworks DEPLOYMENT_LOCATION=YES
 
       - name: Zipping lightAquaBlue
