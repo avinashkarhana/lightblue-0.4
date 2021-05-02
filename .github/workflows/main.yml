@@ -20,7 +20,9 @@ jobs:
         run: python3 setup.py bdist_wheel --universal --dist-dir=wheels
 
       - name: Installing lightBlue
-        run: python3 setup.py install
+        run: |
+          cd src/mac/LightAquaBlue
+          xcodebuild install -arch '$(NATIVE_ARCH_ACTUAL)' -target LightAquaBlue -configuration Release DSTROOT=/ INSTALL_PATH=/Library/Frameworks DEPLOYMENT_LOCATION=YES
 
       - name: Zipping lightAquaBlue
         run: zip LightAquaBlue.zip /Library/Frameworks/LightAquaBlue -r
