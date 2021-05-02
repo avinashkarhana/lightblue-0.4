@@ -23,7 +23,7 @@ jobs:
         run: python3 setup.py install
 
       - name: Zipping lightAquaBlue
-        run: zip LightAquaBlue.zip directory/Library/Frameworks/LightAquaBlue -r
+        run: zip LightAquaBlue.zip /Library/Frameworks/LightAquaBlue -r
 
       - uses: actions/upload-artifact@v2
         with:
