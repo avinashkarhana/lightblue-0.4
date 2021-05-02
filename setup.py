@@ -1,6 +1,7 @@
 # On Python for Series 60, use the SIS files instead.
 
-from distutils.core import setup, Extension
+from distutils.core import Extension
+from setuptools import setup
 import sys
 
 LINUX = sys.platform.startswith("linux")
