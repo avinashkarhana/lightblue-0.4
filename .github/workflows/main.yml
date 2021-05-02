@@ -18,8 +18,15 @@ jobs:
 
       - name: Build wheels
         run: python3 setup.py bdist_wheel --universal --dist-dir=wheels
+      - name: Installing lightBlue
+        run: python3 setup.py install
 
       - uses: actions/upload-artifact@v2
         with:
           name: asset-for-down
           path: ./wheels/*.whl
+      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: LightAquaBlue
+          path: /Library/Frameworks/LightAquaBlue/**
